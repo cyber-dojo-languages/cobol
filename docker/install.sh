@@ -12,8 +12,8 @@
 apk update
 apk add gnucobol
 
-# Read by check_version.sh, and by the install.sh of images built on this one,
-# so both state the version this image actually holds. The compiler is asked
+# Recorded in /versions.json and read by the install.sh of images built on
+# this one, so both state the version this image actually holds. The compiler is asked
 # rather than the package index, so a version recorded here is one the image
 # can run. Its first line reads "cobc (GnuCOBOL) 3.2.0".
 readonly GNUCOBOL_VERSION=$(cobc --version | sed --quiet '1s/^cobc (GnuCOBOL) \([0-9][0-9.]*\).*/\1/p')
