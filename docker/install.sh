@@ -25,6 +25,16 @@ if [ -z "${GNUCOBOL_VERSION}" ]; then
   exit 1
 fi
 
-echo "{\"gnucobol\":\"${GNUCOBOL_VERSION}\"}" > /versions.json
+# The language is named COBOL, as a learner knows it, though the version is
+# GnuCOBOL's: that is the compiler which implements it here.
+cat > /versions.json <<EOF
+{
+  "language": {
+    "name": "COBOL",
+    "version": "${GNUCOBOL_VERSION}"
+  },
+  "test_frameworks": []
+}
+EOF
 
 rm -rf /var/cache/apk/*
